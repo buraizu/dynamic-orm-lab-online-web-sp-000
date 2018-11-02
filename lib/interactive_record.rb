@@ -54,7 +54,7 @@ class InteractiveRecord
   def self.find_by(search)
     unknown_key = ""
     unknown_value = ""
-    search.each do |key, value|
+    search do |key, value|
       unknown_key << key
       unknown_value << value
     end  
