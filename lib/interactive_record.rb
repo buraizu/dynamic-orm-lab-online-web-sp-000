@@ -54,6 +54,7 @@ class InteractiveRecord
   def self.find_by(search)
     key = search.keys
     value = search.values
+    binding.pry
     sql = "SELECT * FROM #{self.table_name} WHERE #{key} = #{value}"
     DB[:conn].execute(sql)
   end
