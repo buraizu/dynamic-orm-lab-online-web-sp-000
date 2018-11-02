@@ -52,13 +52,10 @@ class InteractiveRecord
   end
 
   def self.find_by(search)
-    unknown_key = ""
-    unknown_value = ""
+    key = search.keys
+    value = search.values
     binding.pry
-    search do |key, value|
-      unknown_key << key.to_s
-      unknown_value << value.to_s
-    end
+    
 
     sql = "SELECT * FROM #{self.table_name} WHERE #{key} = #{value}"
     DB[:conn].execute(sql)
