@@ -54,7 +54,7 @@ class InteractiveRecord
   def self.find_by(search)
     key = search.keys.join
     value = search.values.join
-    binding.pry
+  
 
 
     sql = "SELECT * FROM #{self.table_name} WHERE #{key} = #{value}"
