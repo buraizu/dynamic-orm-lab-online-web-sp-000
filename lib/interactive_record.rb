@@ -59,7 +59,7 @@ class InteractiveRecord
       unknown_key << key.to_s
       unknown_value << value.to_s
     end
-    
+
     sql = "SELECT * FROM #{self.table_name} WHERE #{key} = #{value}"
     DB[:conn].execute(sql)
   end
