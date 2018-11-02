@@ -52,8 +52,8 @@ class InteractiveRecord
   end
 
   def self.find_by(search)
-    key = search.keys.to_s
-    value = search.values.to_s
+    key = search.keys.to_s.strip
+    value = search.values.to_s.strip
     binding.pry
 
 
