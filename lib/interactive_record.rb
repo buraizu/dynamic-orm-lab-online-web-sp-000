@@ -55,9 +55,9 @@ class InteractiveRecord
     unknown_key = ""
     unknown_value = ""
     search do |key, value|
-      unknown_key << key
-      unknown_value << value
-    end  
+      unknown_key << key.to_s
+      unknown_value << value.to_s
+    end
     binding.pry
     sql = "SELECT * FROM #{self.table_name} WHERE #{key} = #{value}"
     DB[:conn].execute(sql)
