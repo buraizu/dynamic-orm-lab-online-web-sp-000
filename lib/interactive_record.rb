@@ -55,7 +55,7 @@ class InteractiveRecord
     key = search.keys.join
     value = search.values.join
     # binding.pry
-    sql = "SELECT * FROM #{self.table_name} WHERE #{key} = #{value}"
+    sql = "SELECT * FROM #{self.table_name} WHERE #{key} = '#{value}'"
     DB[:conn].execute(sql)
   end
 
